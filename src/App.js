@@ -302,8 +302,8 @@ function App() {
   const pricing = [
     {
       name: "Interior Revival",
-      price: "$85",
-      suvPrice: "$125",
+      price: "$75",
+      suvPrice: "$100",
       features: [
         "Deep interior cleaning",
         "Carpet restoration",
@@ -316,7 +316,7 @@ function App() {
     {
       name: "Exterior Enhancement",
       price: "$60",
-      suvPrice: "$100",
+      suvPrice: "$75",
       features: [
         "Full exterior wash",
         "Paint decontamination",
@@ -328,8 +328,8 @@ function App() {
     },
     {
       name: "Showroom Package",
-      price: "$160",
-      suvPrice: "$200",
+      price: "$125",
+      suvPrice: "$150",
       featured: true,
       features: [
         "Complete interior & exterior",

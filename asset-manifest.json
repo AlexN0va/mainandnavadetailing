@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/mainandnavadetailing/static/css/main.ca88323c.css",
-    "main.js": "/mainandnavadetailing/static/js/main.fb14faa9.js",
+    "main.js": "/mainandnavadetailing/static/js/main.05fe7a39.js",
     "static/media/lgo.png": "/mainandnavadetailing/static/media/lgo.3d036cd5f8dad8454b8f.png",
     "index.html": "/mainandnavadetailing/index.html",
     "main.ca88323c.css.map": "/mainandnavadetailing/static/css/main.ca88323c.css.map",
-    "main.fb14faa9.js.map": "/mainandnavadetailing/static/js/main.fb14faa9.js.map"
+    "main.05fe7a39.js.map": "/mainandnavadetailing/static/js/main.05fe7a39.js.map"
   },
   "entrypoints": [
     "static/css/main.ca88323c.css",
-    "static/js/main.fb14faa9.js"
+    "static/js/main.05fe7a39.js"
   ]
 }

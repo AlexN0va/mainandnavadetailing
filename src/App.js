@@ -302,8 +302,8 @@ function App() {
   const pricing = [
     {
       name: "Interior Revival",
-      price: "$75",
-      suvPrice: "$100",
+      price: "$85",
+      suvPrice: "$125",
       features: [
         "Deep interior cleaning",
         "Carpet restoration",
@@ -316,7 +316,7 @@ function App() {
     {
       name: "Exterior Enhancement",
       price: "$60",
-      suvPrice: "$75",
+      suvPrice: "$100",
       features: [
         "Full exterior wash",
         "Paint decontamination",
@@ -328,8 +328,8 @@ function App() {
     },
     {
       name: "Showroom Package",
-      price: "$125",
-      suvPrice: "$150",
+      price: "$160",
+      suvPrice: "$200",
       featured: true,
       features: [
         "Complete interior & exterior",
@@ -392,7 +392,7 @@ function App() {
           <Instagram size={36} />
           @marinnavadetailing
         </InstagramCard>
-      </SocialSection>
+      </SocialSection> 
 
       <Section id="services">
         <motion.div
@@ -473,6 +473,67 @@ function App() {
         </PricingGrid>
       </Section>
 
+      {/* Extras Section */}
+      <Section id="extras" style={{ background: 'var(--bg-primary)' }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '1rem' }}>
+            <span className="gradient-text">Extras</span> & Specialty Services
+          </h2>
+          <p style={{ textAlign: 'center', color: 'var(--text-secondary)', fontSize: '1.2rem', marginBottom: '3rem' }}>
+            Enhance your detail with our specialty add-ons. For polishing and ceramic coating, text us for a custom quote!
+          </p>
+        </motion.div>
+        <ServicesGrid>
+          <ServiceCard
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -10 }}
+          >
+            <ServiceIcon>
+              <Zap size={36} />
+            </ServiceIcon>
+            <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Headlight Restoration</h3>
+            <p style={{ color: 'var(--text-secondary)' }}>
+              Multi-stage premium restoration for both headlights. Restore clarity and brightness to foggy or yellowed headlights for improved safety and appearance.<br/>
+              <b>$80 for both headlights</b>
+            </p>
+          </ServiceCard>
+          <ServiceCard
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -10 }}
+          >
+            <ServiceIcon>
+              <Star size={36} />
+            </ServiceIcon>
+            <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Polishing</h3>
+            <p style={{ color: 'var(--text-secondary)' }}>Paint polishing for swirl removal and gloss enhancement. <b>Text us for a quote!</b></p>
+          </ServiceCard>
+          <ServiceCard
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -10 }}
+          >
+            <ServiceIcon>
+              <Shield size={36} />
+            </ServiceIcon>
+            <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Ceramic Coating</h3>
+            <p style={{ color: 'var(--text-secondary)' }}>Long-lasting protection and extreme gloss. <b>Text us for a quote!</b></p>
+          </ServiceCard>
+        </ServicesGrid>
+      </Section>
+
       <Section id="booking" style={{ background: 'var(--bg-primary)' }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -489,7 +550,7 @@ function App() {
           </p>
           <CTAButton
             as="a"
-            href="https://forms.gle/DogYGiMbwHrW6Szn7"
+            href="https://calendly.com/marinnavadetailing/detailing-appointment"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}

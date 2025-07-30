@@ -302,12 +302,11 @@ function App() {
   const pricing = [
     {
       name: "Interior Revival",
-      price: "$85",
-      suvPrice: "$125",
+      price: "$75",
+      suvPrice: "$100",
       features: [
         "Deep interior cleaning",
         "Carpet restoration",
-        "Leather & plastic conditioning",
         "Odor elimination",
         "Dashboard & console cleaning",
         "Perfect for heavy use vehicles"
@@ -315,8 +314,8 @@ function App() {
     },
     {
       name: "Exterior Enhancement",
-      price: "$60",
-      suvPrice: "$100",
+      price: "$65",
+      suvPrice: "$75",
       features: [
         "Full exterior wash",
         "Paint decontamination",
@@ -328,8 +327,8 @@ function App() {
     },
     {
       name: "Showroom Package",
-      price: "$160",
-      suvPrice: "$200",
+      price: "$135",
+      suvPrice: "$165",
       featured: true,
       features: [
         "Complete interior & exterior",
@@ -615,7 +614,6 @@ function App() {
           >
             <Phone size={40} style={{ color: 'var(--accent-primary)', marginBottom: '1rem' }} />
             <h3>Call Us</h3>
-            <p style={{ color: 'var(--text-secondary)' }}>707-849-9487</p>
             <p style={{ color: 'var(--text-secondary)' }}>707-477-7017</p>
           </ContactCard>
 

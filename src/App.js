@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { 
   Car, 
@@ -14,10 +15,13 @@ import {
   Star,
   CheckCircle,
   ArrowRight,
-  Zap
+  Zap,
+  Camera
 } from 'lucide-react';
 import styled from 'styled-components';
 import logo from './assets/lgo.png';
+import Photos from './Photos';
+
 // Styled Components
 const AppContainer = styled.div`
   min-height: 100vh;
@@ -248,6 +252,29 @@ const InstagramCard = styled(motion.a)`
   }
 `;
 
+const PhotosButton = styled(motion.button)`
+  background: var(--bg-tertiary);
+  border: 2px solid var(--accent-primary);
+  padding: 12px 24px;
+  border-radius: 50px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  
+  &:hover {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+    transform: translateY(-2px) scale(1.02);
+  }
+`;
+
 const FloatingElements = styled.div`
   position: absolute;
   top: 0;
@@ -267,7 +294,7 @@ const FloatingElement = styled(motion.div)`
   opacity: 0.6;
 `;
 
-function App() {
+function Home() {
   const [scrollY, setScrollY] = useState(0);
   const { scrollYProgress } = useScroll();
   
@@ -290,20 +317,19 @@ function App() {
     {
       icon: <Shield />,
       title: "Interior Revival",
-      description: "Deep clean + protection including carpet restoration, clean and condition leather and plastic surfaces. Ideal for cars with heavy interior use, pet hair, stains, or smells."
+      description: "Deep clean, Ideal for cars with heavy interior use, pet hair, stains, or smells."
     },
     {
       icon: <Car />,
       title: "Exterior Enhancement",
-      description: "Paint protection + shine including full wash, paint decontamination, clean and shine wheels and tires, restore faded plastic trim. Best for boosting curb appeal and protecting your vehicle's finish."
+      description: "Paint protection + shine including full wash, clean and shine wheels and tires, restore faded plastic trim. Best for boosting curb appeal and protecting your vehicle's finish."
     }
   ];
 
   const pricing = [
     {
       name: "Interior Revival",
-      price: "$75",
-      suvPrice: "$100",
+      price: "$90-$140",
       features: [
         "Deep interior cleaning",
         "Carpet restoration",
@@ -314,8 +340,7 @@ function App() {
     },
     {
       name: "Exterior Enhancement",
-      price: "$65",
-      suvPrice: "$75",
+      price: "$75-$85",
       features: [
         "Full exterior wash",
         "Paint decontamination",
@@ -327,15 +352,13 @@ function App() {
     },
     {
       name: "Showroom Package",
-      price: "$135",
-      suvPrice: "$165",
+      price: "$150-$215",
       featured: true,
       features: [
         "Complete interior & exterior",
         "Full rejuvenation treatment",
         "Paint protection & shine",
         "Interior deep clean",
-        "Carpet & leather restoration",
         "Perfect for new cars or full refresh"
       ]
     }
@@ -391,6 +414,15 @@ function App() {
           <Instagram size={36} />
           @marinnavadetailing
         </InstagramCard>
+        <PhotosButton
+          as={Link}
+          to="/photos"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <Camera size={20} />
+          Photos
+        </PhotosButton>
       </SocialSection> 
 
       <Section id="services">
@@ -439,7 +471,7 @@ function App() {
             <span className="gradient-text">Pricing</span> That Fits
           </h2>
           <p style={{ textAlign: 'center', color: 'var(--text-secondary)', fontSize: '1.2rem', marginBottom: '3rem' }}>
-            Choose the perfect package for your ride. SUV/Truck pricing available.
+            Choose the perfect package for your ride. Price ranges available. Sedans start at lowest price and as car size increases price increases.
           </p>
         </motion.div>
 
@@ -456,9 +488,6 @@ function App() {
             >
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>{plan.name}</h3>
               <Price>{plan.price}</Price>
-              <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-                SUV/Truck: {plan.suvPrice}
-              </div>
               <FeatureList>
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex}>
@@ -653,6 +682,17 @@ function App() {
         <p>&copy; 2024 Marin & Nava Detailing. All rights reserved.</p>
       </footer>
     </AppContainer>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/photos" element={<Photos />} />
+      </Routes>
+    </Router>
   );
 }
 

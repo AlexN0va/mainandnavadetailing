@@ -19,7 +19,7 @@ import {
   Camera
 } from 'lucide-react';
 import styled from 'styled-components';
-import logo from './assets/lgo.png';
+import logo from './assets/lgo4.PNG';
 import Photos from './Photos';
 
 // Styled Components
@@ -329,10 +329,9 @@ function Home() {
   const pricing = [
     {
       name: "Interior Revival",
-      price: "$90-$140",
+      price: "$90-$150",
       features: [
         "Deep interior cleaning",
-        "Carpet restoration",
         "Odor elimination",
         "Dashboard & console cleaning",
         "Perfect for heavy use vehicles"
@@ -340,10 +339,9 @@ function Home() {
     },
     {
       name: "Exterior Enhancement",
-      price: "$75-$85",
+      price: "$75-$95",
       features: [
         "Full exterior wash",
-        "Paint decontamination",
         "Wheel & tire cleaning",
         "Plastic trim restoration",
         "Paint protection",
@@ -352,7 +350,7 @@ function Home() {
     },
     {
       name: "Showroom Package",
-      price: "$150-$215",
+      price: "$150-$225",
       featured: true,
       features: [
         "Complete interior & exterior",
@@ -425,41 +423,6 @@ function Home() {
         </PhotosButton>
       </SocialSection> 
 
-      <Section id="services">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '1rem' }}>
-            Our <span className="gradient-text">Services</span>
-          </h2>
-          <p style={{ textAlign: 'center', color: 'var(--text-secondary)', fontSize: '1.2rem', marginBottom: '3rem' }}>
-            From interior revival to complete showroom packages, we've got you covered
-          </p>
-        </motion.div>
-
-        <ServicesGrid>
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-            >
-              <ServiceIcon>
-                {service.icon}
-              </ServiceIcon>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>{service.title}</h3>
-              <p style={{ color: 'var(--text-secondary)' }}>{service.description}</p>
-            </ServiceCard>
-          ))}
-        </ServicesGrid>
-      </Section>
-
       <Section id="pricing" style={{ background: 'var(--bg-secondary)' }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -516,6 +479,8 @@ function Home() {
             Enhance your detail with our specialty add-ons. For polishing and ceramic coating, text us for a custom quote!
           </p>
         </motion.div>
+
+
         <ServicesGrid>
           <ServiceCard
             initial={{ opacity: 0, y: 30 }}
@@ -524,6 +489,7 @@ function Home() {
             viewport={{ once: true }}
             whileHover={{ y: -10 }}
           >
+
             <ServiceIcon>
               <Zap size={36} />
             </ServiceIcon>
@@ -533,6 +499,44 @@ function Home() {
               <b>$80 for both headlights</b>
             </p>
           </ServiceCard>
+
+            <ServiceCard
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -10 }}
+          >
+
+            <ServiceIcon>
+              <Zap size={36} />
+            </ServiceIcon>
+            <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Water Stain Removal</h3>
+            <p style={{ color: 'var(--text-secondary)' }}>
+              Remove window and car water spot<br/>
+              <b>$20-$40</b>
+            </p>
+          </ServiceCard>
+
+          <ServiceCard
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -10 }}
+          >
+
+            <ServiceIcon>
+              <Zap size={36} />
+            </ServiceIcon>
+            <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Carpet/Seats Shampoo</h3>
+            <p style={{ color: 'var(--text-secondary)' }}>
+              Complete and professional carpet and seat extraction with deep shampoo treatment to remove stains, dirt, and odors.<br/>
+              <b>$50-$100</b>
+            </p>
+          </ServiceCard>
+          
+
           <ServiceCard
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -691,13 +691,12 @@ function Home() {
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/photos" element={<Photos />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/photos" element={<Photos />} />
+    </Routes>
   );
 }
+
 
 export default App; 
